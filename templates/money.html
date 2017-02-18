@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+        我的帳本：{{month}} <A href="/money/excel/{{month}}">匯出到Excel</A>
+        <table>
+        <tr><td>時間</td><td>項目</td><td>金額</td></tr>
+        {% for money in moneys %}
+                <tr><Td>({{money.time| date:"l"}}){{money.time}}</Td><td>{{money.item}}</td><td>{{money.price}}元</td></tr>
+        {% endfor %}
+        </table>
+{% endblock %}
